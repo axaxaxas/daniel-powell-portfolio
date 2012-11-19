@@ -3,9 +3,7 @@ a dialect of the Lisp programming language.
 
 It accepts definitions of algebras, and can evaluate expressions
 within a given algebra as well as generate new expressions by applying
-rules of inference. An implementation of a Dijkstra shunting parser optionally 
-allows expressions to be specified using infix notation rather than the
-prefix notation native to Lisp.
+rules of inference.
 
 The architecture of Galois is decentralized; it follows the Lisp
 convention of providing a toolbox of functions and macros
