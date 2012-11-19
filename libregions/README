@@ -1,0 +1,31 @@
+This is an optimized implementation in C of a data structure and
+associated functions for working with three-dimensional bitmaps 
+in a convenient and memory-efficient way.
+
+It's a three-dimensional generalization of Bill Atkinson's "regions"
+technique, which was essential to the implementation of the 1986 Apple
+Macintosh's bitmapped display. (Refer to US Patent No. 4,622,545 
+for a thorough description of Atkinson regions.)
+
+In addition to being three-dimensional, the regions implemented here
+differ from Atkinson's regions in that while Atkinson regions
+define membership for each point on the Euclidean plane, these
+three-dimensional regions each operate on a subset of three-dimensional
+space. (Unpaired inversion points are considered to be closed by the
+boundary of the region's associated space.) 
+
+This provides some convenience in converting back and forth
+between bitmaps and regions, but can be safely disregarded if
+bounds-free regions are what you want.
+
+The regions and byte arrays in this library are all cubical. Arbitrary
+rectangular volumes could be implemented at the expense of a little
+legibility.
+
+Similarly, this code could be used for regions of dimensions
+other than three with only minor modifications.
+
+Compile the software as a shared library under Linux with:
+
+gcc -std=gnu99 -c -fpic regions.c -o regions.o
+gcc -shared -Wl,-soname,libregions.so.1 -o libregions.so.1.0 regions.o

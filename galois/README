@@ -1,0 +1,31 @@
+Galois is a term-rewriting symbolic algebra system written in Scheme,
+a dialect of the Lisp programming language.
+
+It accepts definitions of algebras, and can evaluate expressions
+within a given algebra as well as generate new expressions by applying
+rules of inference. An implementation of a Dijkstra shunting parser optionally 
+allows expressions to be specified using infix notation rather than the
+prefix notation native to Lisp.
+
+The architecture of Galois is decentralized; it follows the Lisp
+convention of providing a toolbox of functions and macros
+to be used within an interactive Lisp environment rather than
+a single entry point for batch-style execution.
+
+It's a short program (about 600 lines between its various files), 
+but its decentralized organization might make it difficult to pick 
+a place to begin reading.
+
+Suggested starting points are:
+	 - boolean.scm and real.scm
+	   	- Definitions of Boolean algebra and a ring over the reals, respectively.
+	 - derive.scm
+	        - Derivation of new expressions in a given algebra.
+	 - unify.scm
+  	       - Given two legal expressions in an algebra,
+		     determine if one can be derived from the other
+		     by binding values to its free variables.
+
+Galois can be used by loading all of its source files in your Scheme
+environment of choice. tests.scm implements a basic unit testing 
+framework and a battery of tests.

@@ -1,0 +1,51 @@
+Narsil is a utility and extensible framework for backing 
+up data across a network in a decentralized, high-availability, 
+fault-tolerant fashion.
+
+Given a list of cooperating machines, any Narsil node can 
+publish or retrieve data from its peers on the list. 
+Narsil allows any part of the data to be fully reconstructed 
+even if some machines become unavailable.
+
+The Narsil protocol provides safeguards against data
+corruption caused by network failure. A Narsil network
+can transparently resynchronize should an
+attempt to update data fail on some or all members of
+the network. 
+
+Narsil's architecture is designed to make it easy to extend.
+The core algorithm, network code, and protocol definition
+are implemented in a loosely coupled fashion, allowing
+new behavior to be added seamlessly.
+
+----
+The Narsil codebase uses the convention, borrowed
+from combinatorics, that N represents the number of
+machines participating in a system and that K
+represents the minimum number of available
+machines necessary to reconstruct a file.
+
+All of the basic functionality is fully implemented,
+but there isn't a UI yet.
+
+This is an early proof-of-concept implementation.
+Through my informal testing, I'm confident that it
+works as intended in nearly all cases. I'm also confident
+it has failure modes I haven't thought of that will
+be revealed only through thorough real-world tests.
+
+It also doesn't address the security implications
+of spreading your data around remote machines
+in a totally distributed fashion.
+
+Don't trust it with anything important yet.
+----
+
+client.py - Initiating actions on the Narsil network.
+
+server.py - Carrying out requests from other Narsil nodes.
+
+interact.py - Defines the Narsil protocol and
+			  performs network operations.
+
+nutils.py - Provides utility functions. 

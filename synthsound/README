@@ -1,0 +1,18 @@
+Synthsound is a simple Python framework for writing audio synthesis software.
+Synthsound allows any function fully defined on the positive reals to be used
+to generate audio.
+
+Audiopack is a Python extension written in C that provides an interface for
+packaging Python objects into raw audio frames that can be written to a
+sound card.
+
+Synthsound and Audiopack require ALSA and the Python ALSA library.
+
+Install Audiopack under Linux with:
+
+sudo python setup.py install
+
+Synthsound is not packaged into a module, but can be used by importing
+synthsound.py.
+
+example.py provides a simple demonstration of how synthsound.py can be used.
