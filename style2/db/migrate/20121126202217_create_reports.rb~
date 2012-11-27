@@ -1,0 +1,27 @@
+class CreateReports < ActiveRecord::Migration
+  def change
+    create_table :reports do |t|
+      t.integer :source_id
+      t.integer :markov_id
+
+      t.float :pval
+      t.float :universepval
+
+      t.timestamps
+
+      execute <<-END
+       PRAGMA foreign_keys = ON;
+ 
+       ALTER TABLE reports
+       ADD CONSTRAINT fk_report_source
+       FOREIGN KEY (fk_source)
+       REFERENCES sources(id);
+
+       ALTER TABLE reports
+       ADD CONSTRAINT fk_report_markov
+       FOREIGN KEY (fk_markov)
+       REFERENCES markovs(id); 
+     END
+    end
+  end
+end

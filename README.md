@@ -1,7 +1,10 @@
 Daniel Powell's Code Portfolio
 ================================
 
-This is a code portfolio consisting of four small computer programs:
+This is a code portfolio consisting of five small computer programs:
+
+*Style2* is a Ruby on Rails application that performs hidden Markov model
+analyses on a corpus of written texts.
 
 *Galois* is a term-rewriting algebra system written in Scheme.
 

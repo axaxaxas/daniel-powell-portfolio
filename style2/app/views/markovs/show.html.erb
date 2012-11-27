@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @markov.name %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @markov.author %>
+</p>
+
+<p>
+  <b>Pair Count:</b>
+  <%= @markov.paircount %>
+</p>
+
+<p>
+  <%= @markov.inspect %>
+</p>
+
+<%= link_to 'Edit', edit_markov_path(@markov) %> |
+<%= link_to 'Back', :to => "home#index" %>
+

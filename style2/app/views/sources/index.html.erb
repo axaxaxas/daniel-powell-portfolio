@@ -1,0 +1,26 @@
+<h1>List of Source Texts</h1>
+
+<table>
+  <tr>
+    <th>|Title|</th>
+    <th>|Author|</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sources.each do |source| %>
+  <tr>
+    <td><%= source.title %></td>
+    <td><%= source.author %></td>
+    <td><%= link_to 'Show', source %></td>
+    <td><%= link_to 'Edit', edit_source_path(source) %></td>
+    <td><%= link_to 'Destroy', source, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Source', new_source_path %> |
+<%= link_to 'Home', '../' %>
